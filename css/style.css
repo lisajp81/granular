@@ -1,0 +1,207 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300);
+/*google font in ""*/
+body {
+  font-family: "lato", Arial, sans-serif;
+  font-size: 14px;
+  color: #24292d;
+  line-height: 1.6;
+  text-align: center;
+}
+  header {
+    /*why using background and not bkg-image? By using background it allows us to use the shorthand of center and no-repeat within the first command.  If you used bbkg-image as it's already specified what the bkg is an image you can't then also add additional commands in to that code.  Will need to write each action individually. Quick answer: SAVES TIME!*/
+    background: url(../images/mountain.jpg) center no-repeat;
+    background-size: cover;
+    /*set height to ensure ok on all screens. To make the header the height of the browser window (whatever size it may be) we use height=100vh (viewpoint h).  We also have 100vw for viewpoint width.  */
+    height: 100vh;
+      }
+
+  h1{
+    /*position absolute allows us to move elements away from normal position*/
+    position: absolute;
+    /*as the screens may change we can't use pixels as that don't translate between different screen sizes.Use % instead.  We want to move image to the middle but as its moving it from the top left corner of image it gets tricky. Remember images are moved from their top left co-ordinates, so when you do the % it will prob not go to exactly where you want.*/
+    /*To get the image in the middle we need to move it half of its width and half of its height so check image size in browser via inspect element*/
+    /*The image is naturally 500w x264h px.  Use a margin in addition to the Top/left using the pixel so 1/2 500 is 250 and half 264 is 132.  As we want to raise the image use -132*/
+    top: 50%;
+    left: 50%;
+    margin: -132px 0 0 -250px;
+  }
+
+  header a{
+    /*for the arrow logo, its already in the middle so just need to change its position as its in the middle already we are ok to use px and not %*/
+    position: absolute;
+    bottom: 40px;
+  }
+
+  .intro{
+    background-color: #e0e3e6;
+    padding: 50px 0;
+  }
+  h2{
+    font-size: 26px;
+    font-weight:300;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+
+  }
+
+  .feature{
+    padding:60px;
+    /*to limit the width the text can take up on the page. Use max width to take account of different screen sizes */
+    max-width: 860px;
+    /*images re block elements so need to force them to centre of page by using margin*/
+    margin: 0 auto;
+      }
+
+      p{
+        /*to create margin so text doesn't run into the images*/
+        margin-bottom: 20px;
+      }
+      /*want to move the green arrows into centre -by  stacking as block.  Need unique id - here feature a should be good enough.  Add a margin as wellso they don't sit on image below */
+
+      .feature a{
+        display:block;
+        margin-bottom: 20px;
+      }
+
+      /*# is for referencing ids*/
+      #blue-lagoon{
+        background-image: url(../images/blue-lagoon.jpg);
+      }
+
+      #pool{
+        background-image: url(../images/pool.jpg);
+      }
+      #forest{background-image: url(../images/forest.jpg);}
+
+
+      #boat{
+        background-image: url(../images/boat.jpg);
+      }
+      #river{
+        background-image: url(../images/river.jpg);
+      }
+
+      .scroll-effect {
+        /*want images to be 100% of browser height use  (regaardless of screen size, turn off bkg repeat, centre images and cover screen)*/
+        height: 100vh;
+        /*need to use the bkg:no-repeat for older browsers*/
+        background: no-repeat center;
+        background-position: center;
+        background-size:cover;
+        /*create window scroll effect where images look fixed in place and scroll over one another*/
+        background-attachment: fixed;
+        position:relative;
+        /*use pixels as its always the*/
+
+      }
+
+      h3{
+        color:#fff;
+        text-transform: uppercase;
+        font-size: 42px;
+        font-weight: 300;
+        /*use learnlayout.com for more info */
+        /*position absolute and fixed when applied to elements defaults their position to the top of the browser window.To change this we need to say where we want to position these elements relative to. Here we want to position thme within their sections so must apply position:relative to the scroll-effect class.*/
+        /*use position but need to use relative in scroll effect so the positon absolute rule is only applied within the section i.e. scroll-effect you are working onso the text is positioned relative to its sections. so apply position relative to the .scroll-effect class, and you can then use position: absolute*/
+        position: absolute;
+        bottom: 20px;
+        /*when using position absolute/fixed we lose the default width of our elements. To get text align center working again we reset the width to 100% (of our browser screen)*/
+        width:100%;
+
+      }
+
+      .subscribe {
+        background-color: #f3f4f5;
+        padding: 50px 0;
+
+      }
+
+      form {
+        /*make the form wider*/
+        width: 100%;
+      }
+
+      input{
+        width:60%;
+        text-align:center;
+        padding: 8px;
+        /*width style colour*/
+        border:2px solid #24292d;
+        /*get rid of the blue line once box is selected*/
+        outline: none;
+        margin: 10px 0;
+        /*transitions allow you to animate css properties*/
+        /*tranistion property must be applied to the normal state*/
+        /* here we are managing the transtition of the border colour from grey to green*/
+        /*first value - what change you want to manage, duration, timing-function i.e. easing*/
+        /*if transtiting more than one property at a time use "all" to transtition between all states*/
+        /*but using all aplies it to every input so better to do as below*/
+        transition: border-color 0.3s ease-in-out, width 0.3s ease-in-out;
+        /*to soften/round box edges use border-radius*/
+        border-radius: 4px;
+      }
+
+      input:focus {
+        /*change the highlight colour for the box */
+        border-color: #16B898;
+        /*use transition property, in main input section to make this change a bit slower*/
+      }
+
+      input[type="submit"]{
+        text-transform: uppercase;
+        background-color: transparent;
+        /*as its not a default button anymore we need to readd the cursor*/
+        cursor: pointer;
+
+      }
+
+      input[type="submit"]:hover{
+        /*nb.  dont have any spaces in this*/
+        /*here when we hover over the button it will change colour and grow*/
+        border-color: #16B898;
+        width:70%;
+      }
+
+      footer{
+        background-color: #fff;
+        padding: 50px 0;
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 300;
+      }
+      footer a {h
+        text-decoration: none;
+        color: #24292d;
+        /*use margin to space them out*/
+        margin: 0 10px;
+      }
+
+      small{
+        color: #e0e3e6;
+      }
+
+@media screen and (max-width: 860px){
+  h1{
+    /*reset h1 to sit in oirginal positon within flow of page*/
+    position: static;
+    margin: 0 auto;
+    /*so logo sits away from the edges of the screen*/
+    padding: 20px;
+  }
+
+
+/*to group classes together to apply rules ensure you separate them by commas*/
+  .intro, .feature, .subscribe {
+    padding:20px;
+  }
+/*need to make the form boxes bigger on a small screen*/
+  input{
+    width:80%}
+  }
+  /*as orignally the transtitiotn command made the button 70% bigger it now makes it smaller as we increasd the size of the button*/
+
+  input[type="submit"]:hover {
+    width:90%;
+  }
+
+  }
