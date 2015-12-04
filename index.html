@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Granular</title>
+    <meta name="description" content="The standard of mobile photography now available on iOS and Android">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+  <header>
+    <!--downloaded the animate.css and have applied it.  Need tocheck how i figure out the name of the animation  -->
+    <!-- <h1 class="animated bounce infinite"> -->
+      <img src="images/logo.png"   alt="Granular logo">
+    </h1>
+    <!-- add class to a for the js>  Need to reference where on your page that you want the anchor point to jump to.  if you number the sections this helps, do so by adding ids -->
+    <!--this id is then placed inside the href with a prefix of "#".  Not sure if we used a class it would need ""  -->
+    <a href="#first-section" class="scroll-to">
+    <img src="images/arrow.png">
+    </a>
+  </header>
+
+<!--add id to section for the scroll/js stuff  -->
+  <section class="intro" id="first-section">
+    <h2>Granular App is now Available for iOS & Android</h2>
+    <img src="images/app-hero.png">
+  </section>
+
+  <section class="feature" >
+    <h2>Perfectly in shot</h2>
+    <p>The standard of mobile photography, now for iOS and Android. New features include and redesigned UI and advanced camera controls, including manual focus, shutter speed, white balance, and exposure compensation for unprecedented creative control.</p>
+    <a href="#second-section" class="scroll-to">
+      <img src="images/green-arrow.png">
+    </a>
+    <img src="images/viewfinder.png">
+  </section>
+
+  <section class="feature" id="second-section">
+    <h2> Filters galore</h2>
+    <p>Simplify the editing process with new features and enhancements. Use one of our custom designed filters or apply multiple ones to create your own custom effects. Adjust the parameters of each to suit the mood of your photos.</p>
+    <a href="#blue-lagoon" class="scroll-to">
+      <img src="images/green-arrow.png">
+    </a>
+    <img src="images/filters.png">
+  </section>
+
+
+  <!--IDs are used to uniquly id elements as classes but can only be used once per page. here we use the class scroll-effect on each section as the styling will be the same. We will use the ids to set the backgrounds. -->
+
+  <section class="scroll-effect" id="blue-lagoon"><h3>TRI-X</h3>  </section>
+
+  <section class="scroll-effect" id="pool"><h3>Porta</h3></section>
+
+  <section class="scroll-effect" id="forest"><h3>Neopan</h3></section>
+
+  <section class="scroll-effect" id="boat"><h3>Provia</h3></section>
+
+  <section class="scroll-effect" id="river"><h3>Time-Zero</h3></section>
+
+
+
+
+  <section class="subscribe">
+          <h2>Subscribe to our newsletter for app updates</h2>
+          <!-- Begin MailChimp Signup Form -->
+          <div id="mc_embed_signup">
+            <!-- as we are working offline we need to add http: to the Action=" " for it to work -->
+            <form
+             action="http://steer.us12.list-manage.com/subscribe/post?u=655c8db94c1689675b7aad56e&amp;id=979aedc1c6" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+              <div id="mc_embed_signup_scroll">
+                <!-- target _blank opens a new page to confirm action.  Lets page remain in same location -->
+
+                <div class="mc-field-group">
+                  <!-- This line was auto generated but we dont want a label for the box so we have "deleted it from the code"<label for="mce-EMAIL">Email Address </label>-->
+                  <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email Address">
+                  <!--we addedd the placeholder into the box to tell the user what info we want as we have deleted the label for the form box  -->
+                </div>
+                <div id="mce-responses" class="clear">
+                  <div class="response" id="mce-error-response" style="display:none"></div>
+                  <div class="response" id="mce-success-response" style="display:none"></div>
+                </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_655c8db94c1689675b7aad56e_979aedc1c6" tabindex="-1" value=""></div>
+                <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+              </div>
+            </form>
+          </div>
+
+          <!--End mc_embed_signup-->
+
+  </section>
+
+  <footer>
+    <small> &copy; Granular Inc </small>
+      <a href="http://facebook.com">facebook<a>
+      <a href="http://twitter.com">Twitter<a>
+      <a href="http://instagram.com">Instagram<a>
+  </footer>
+
+
+  <script src="js/jquery.js"></script>
+  <script src="js/granular.js"></script>
+</body>
+
+
+
+</html>
